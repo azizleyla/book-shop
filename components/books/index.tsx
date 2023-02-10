@@ -10,7 +10,7 @@ import { MdRemoveRedEye } from "react-icons/md";
 import { SlBasket } from "react-icons/sl";
 import BookItem from "./BookItem";
 import { IBookItem, IBooks } from "../../types/types";
-import QuickViewModal from "../modal/QuickViewModal";
+import QuickViewModal from "../modals/QuickViewModal";
 
 const books = [
   {
@@ -84,14 +84,11 @@ const books = [
     author: "Rhonda Byrne",
   },
 ];
-interface IProps {
-  isOpenViewModal: boolean;
-}
 
 const Books = () => {
   const [booksData, setBoooksData] = useState<IBookItem[]>(books);
-  const [selectedItem, setSelectedItem] = useState();
-  const [isOpenViewModal, setIsOpenViewModal] = useState<IProps>();
+  const [selectedItem, setSelectedItem] = useState<IBookItem>();
+  const [isOpenViewModal, setIsOpenViewModal] = useState(false);
 
   return (
     <div className="my-20">

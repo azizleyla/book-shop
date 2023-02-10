@@ -5,7 +5,7 @@ import { MdRemoveRedEye } from "react-icons/md";
 import { SlBasket } from "react-icons/sl";
 import { SwiperSlide } from "swiper/react";
 import { IBookItem } from "../../types/types";
-import QuickViewModal from "../modal/QuickViewModal";
+import QuickViewModal from "../modals/QuickViewModal";
 
 interface Props {
   book: IBookItem;
