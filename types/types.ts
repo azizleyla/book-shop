@@ -2,15 +2,18 @@ export interface ITitle {
     title:string
 }
 export interface IBookItem{
+    id:number,
     title:string,
-    img:string,
+    img:any,
     prevPrice?:number,
     currentPrice:number,
     qty:number,
     rating:number,
-    isFavorite:false,
+    isFavorite:boolean,
     isNew:boolean,
-    isStock:boolean
+    isStock: boolean,
+    author?: string,
+    product_no:number
 
 }
 export interface IBooks {

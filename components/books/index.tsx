@@ -53,6 +53,7 @@ const books = [
     isNew: false,
     isStock: true,
     product_no: 45355,
+    author: "Philip Kotler",
   },
   {
     id: 4,
@@ -66,6 +67,7 @@ const books = [
     isNew: false,
     product_no: 45355,
     isStock: true,
+    author: "Rhonda Byrne",
   },
   {
     id: 5,
@@ -79,6 +81,7 @@ const books = [
     isNew: false,
     isStock: true,
     product_no: 45355,
+    author: "Rhonda Byrne",
   },
 ];
 interface IProps {
