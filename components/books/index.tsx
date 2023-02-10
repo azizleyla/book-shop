@@ -131,7 +131,7 @@ const Books = () => {
           >
             {booksData.map((book) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={book.id}>
                   <BookItem
                     book={book}
                     setSelectedItem={setSelectedItem}
