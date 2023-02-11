@@ -20,12 +20,12 @@ const Banner = () => {
               <br />
               the majority have suffered alteration in some formr.
             </p>
-            <button className="bg-[#111] text-white py-4 px-10 rounded-[50px] flex items-center gap-2">
+            <button className="bg-[#111] text-white py-4 px-10 rounded-[50px] flex items-center font-semibold gap-2">
               Ətraflı oxu
-              <SlBasket className="text-xl" />
+              <SlBasket className="text-xl font-semibold" />
             </button>
           </div>
-          <div className="w-80 h-80 lg:w-auto lg:h-max">
+          <div className="w-80 h-80 lg:w-auto lg:h-[600px]">
             <Image className="w-full h-full" src={Img.bannerImg} alt="" />
           </div>
         </div>
