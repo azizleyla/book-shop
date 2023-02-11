@@ -10,7 +10,7 @@ import QuickViewModal from "../modals/QuickViewModal";
 interface Props {
   book: IBookItem;
   setIsOpenViewModal: (value: boolean) => void;
-  setSelectedItem: (value: IBookItem) => void;
+  setSelectedItem: any;
 }
 
 const BookItem = ({
