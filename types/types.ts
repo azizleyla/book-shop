@@ -4,7 +4,8 @@ export interface ITitle {
 export interface IBookItem{
     id:number,
     title:string,
-    img:any,
+    coverImg: any,
+    backImg?:any,
     prevPrice?:number,
     currentPrice:number,
     qty:number,

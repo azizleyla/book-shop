@@ -10,20 +10,34 @@ import QuickViewModal from "../modals/QuickViewModal";
 interface Props {
   book: IBookItem;
   setIsOpenViewModal: (value: boolean) => void;
-  setSelectedItem: (value: string) => void;
+  setSelectedItem: (value: IBookItem) => void;
 }
 
-const BookItem = ({ setIsOpenViewModal, setSelectedItem, book }: any) => {
-  const { id, title, img, currentPrice, author, qty } = book;
+const BookItem = ({
+  setIsOpenViewModal,
+  setSelectedItem,
+  book,
+}: Props) => {
+  const { id, title, coverImg, backImg, currentPrice } = book;
   return (
     <>
-      <div className=" bg-[#fff] border-[1px] border-[#e1e1e1] group transition ease-in-out  hover:border-[1px] hover:border-transparent cursor-pointer pt-3 relative">
-        <div className="group-hover:scale-[1.1] transition ease-in-out mb-2 h-64">
+      <div className=" bg-[#fff] border-[1px] border-[#e1e1e1]  group transition ease-in-out  hover:border-[1px] hover:border-transparent cursor-pointer pt-3 relative">
+        <div className="relative h-64 group-hover:scale-[1.15] custom-transition">
           <Image
-            src={img}
+            className={`pointer-events-none   relative  mb-2 h-64 ${
+              backImg && "group-hover:opacity-0 group-hover:hidden"
+            }`}
+            src={coverImg}
             alt=""
             style={{ width: "100%", height: "100%" }}
           />
+          {backImg && (
+            <Image
+              className=" mb-2 hidden opacity-0 absolute w-full h-full transition group-hover:block group-hover:opacity-100"
+              alt=""
+              src={backImg}
+            />
+          )}
         </div>
         <div className="absolute top-2 right-0 group-hover:flex flex-col gap-1 border-[1px] border-[#f7f7f7] shadow-sm  bg-white p-2  rounded-[8px] hidden">
           <button

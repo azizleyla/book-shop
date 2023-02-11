@@ -25,7 +25,7 @@ const Banner = () => {
               <SlBasket className="text-xl" />
             </button>
           </div>
-          <div className="w-80 h-80 lg:w-auto lg:h-auto">
+          <div className="w-80 h-80 lg:w-auto lg:h-max">
             <Image className="w-full h-full" src={Img.bannerImg} alt="" />
           </div>
         </div>

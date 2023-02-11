@@ -29,9 +29,19 @@ body {
   backface-visibility: hidden;
   transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.shadow-inset{
+
+.shadow-inset {
   box-shadow: inset 0 0 0 1px #eee;
 }
-.basket-radius{
+
+.basket-radius {
   border-radius: 67px 0px 0px 0px;
+}
+
+.custom-transition {
+  transition: all 0.2s ease-out;
+}
+
+.swiper {
+  position: static !important;
 }

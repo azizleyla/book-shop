@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
-
 import Title from "../common/Title";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Img from "../Data/Img";
@@ -11,13 +10,14 @@ import { SlBasket } from "react-icons/sl";
 import BookItem from "./BookItem";
 import { IBookItem, IBooks } from "../../types/types";
 import QuickViewModal from "../modals/QuickViewModal";
+import { Autoplay, Navigation } from "swiper";
 
 const books = [
   {
     id: 1,
     title: 'K."SİRR" Həyatımı Necə Dəyişdi (Rhonda Byrne)',
     currentPrice: 19.99,
-    img: Img.book1,
+    coverImg: Img.book1,
     prevPrice: 20,
     qty: 1,
     rating: 4.5,
@@ -28,10 +28,10 @@ const books = [
     author: "Rhonda Bayren",
   },
   {
-    id: 1,
+    id: 2,
     title: "AYNI YILDIZIN ALTINDA",
     currentPrice: 12.8,
-    img: Img.book2,
+    coverImg: Img.book2,
     prevPrice: 20,
     qty: 1,
     rating: 4.5,
@@ -42,10 +42,11 @@ const books = [
     author: "John Green",
   },
   {
-    id: 1,
+    id: 3,
     title: "K.A-DAN Z-YƏ MARKETİNQ (PHİLİP KOTLER)",
     currentPrice: 10.23,
-    img: Img.book6,
+    coverImg: Img.book6,
+    backImg: Img.book6_2,
     prevPrice: 20,
     qty: 1,
     rating: 4.5,
@@ -59,7 +60,7 @@ const books = [
     id: 4,
     title: 'K."SİRR" Həyatımı Necə Dəyişdi (Rhonda Byrne)',
     currentPrice: 15.23,
-    img: Img.book5,
+    coverImg: Img.book5,
     prevPrice: 20,
     qty: 1,
     rating: 4.5,
@@ -71,23 +72,66 @@ const books = [
   },
   {
     id: 5,
-    title: 'K."SİRR" Həyatımı Necə Dəyişdi (Rhonda Byrne)',
-    currentPrice: 15.23,
-    img: Img.book6,
+    title: "K.ALTIN KURALLAR KİTABI 2 (M.DEMİR)",
+    currentPrice: 8.25,
+    coverImg: Img.book7,
+    backImg: Img.book7_2,
     prevPrice: 20,
     qty: 1,
-    rating: 2.5,
+    rating: 3.5,
+    isFavorite: false,
+    isNew: false,
+    isStock: false,
+    product_no: 30355,
+    author: "Merthan Demir",
+  },
+  {
+    id: 6,
+    title: "K.Andorra seməli və ölməli yerdir (Çingiz Abdullayev)",
+    currentPrice: 5.55,
+    coverImg: Img.book8,
+    prevPrice: 20,
+    qty: 1,
+    rating: 4.5,
+    isFavorite: false,
+    isNew: false,
+    product_no: 50355,
+    isStock: true,
+    author: "Çingiz Abdullayev",
+  },
+  {
+    id: 7,
+    title: "AYNI YILDIZIN ALTINDA",
+    currentPrice: 12.8,
+    coverImg: Img.book2,
+    prevPrice: 20,
+    qty: 1,
+    rating: 4.5,
+    isFavorite: false,
+    isNew: false,
+    isStock: false,
+    product_no: 45355,
+    author: "John Green",
+  },
+  {
+    id: 8,
+    title: "K.A-DAN Z-YƏ MARKETİNQ (PHİLİP KOTLER)",
+    currentPrice: 10.23,
+    coverImg: Img.book6,
+    prevPrice: 20,
+    qty: 1,
+    rating: 4.5,
     isFavorite: false,
     isNew: false,
     isStock: true,
     product_no: 45355,
-    author: "Rhonda Byrne",
+    author: "Philip Kotler",
   },
 ];
 
 const Books = () => {
   const [booksData, setBoooksData] = useState<IBookItem[]>(books);
-  const [selectedItem, setSelectedItem] = useState<IBookItem>();
+  const [selectedItem, setSelectedItem] = useState();
   const [isOpenViewModal, setIsOpenViewModal] = useState(false);
 
   return (
@@ -102,12 +146,18 @@ const Books = () => {
             </button>
           </div>
         </div>
-        <div className="container mt-2 m-auto">
+        <div className="container mt-2 m-auto relative">
           <Swiper
+            navigation={true}
+            modules={[Navigation]}
+            // speed={10000}
+
+            spaceBetween={30}
+            loop={true}
             breakpoints={{
               // when window width is >= 320px
-              320: {
-                slidesPerView: 2,
+              380: {
+                slidesPerView: 1,
                 spaceBetween: 20,
               },
               // when window width is >= 480px
@@ -126,8 +176,6 @@ const Books = () => {
                 spaceBetween: 40,
               },
             }}
-            spaceBetween={50}
-            slidesPerView={5}
           >
             {booksData.map((book) => {
               return (
@@ -136,7 +184,6 @@ const Books = () => {
                     book={book}
                     setSelectedItem={setSelectedItem}
                     setIsOpenViewModal={setIsOpenViewModal}
-                    {...book}
                   />
                 </SwiperSlide>
               );

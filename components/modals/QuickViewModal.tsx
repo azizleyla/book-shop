@@ -46,7 +46,7 @@ const QuickViewModal = ({ setIsOpenViewModal, selectedItem }: Props) => {
             <Image
               width={600}
               height={700}
-              src={selectedItem?.img}
+              src={selectedItem?.coverImg}
               alt=""
             />
           </div>
