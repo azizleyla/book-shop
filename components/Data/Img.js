@@ -10,6 +10,7 @@ import book6_2 from "../../public/assets/img/book6_2.webp"
 
 import book7 from "../../public/assets/img/book7.webp"
 import book7_2 from "../../public/assets/img/book7_2.webp"
+import bgImg from "../../public/assets/img/bg.webp"
 
 import book8 from "../../public/assets/img/book8.webp"
 const Img = {
@@ -24,7 +25,8 @@ const Img = {
     book7: book7,
     book7_2: book7_2,
     book8: book8,
-    bannerImg: bannerImg
+    bannerImg: bannerImg,
+    bgImg: bgImg
 
 }
 export default Img;

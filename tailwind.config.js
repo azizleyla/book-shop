@@ -19,8 +19,11 @@ module.exports = {
           '2xl': '6rem',
         },
       },
-      colors:{
+      colors: {
         'modal-color': 'rgba(0,0,0,0.4)'
+      },
+      backgroundImage: {
+        'section-image': "url('/assets/img/bg.webp')"
       }
     },
   },

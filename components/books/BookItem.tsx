@@ -62,7 +62,7 @@ const BookItem = ({
           </button>
           <div className="pl-2 pb-3">
             <span className="text-2xl text-[#1e1e1e] font-bolds">
-              {currentPrice} AZN
+              {currentPrice} ₼
             </span>
           </div>
         </div>
