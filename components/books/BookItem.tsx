@@ -22,9 +22,9 @@ const BookItem = ({
   return (
     <>
       <div className=" bg-[#fff] border-[1px] border-[#e1e1e1]  group transition ease-in-out  hover:border-[1px] hover:border-transparent cursor-pointer pt-3 relative">
-        <div className="relative h-64 group-hover:scale-[1.15] custom-transition">
+        <div className="relative h-64 h group-hover:scale-[1.15] custom-transition">
           <Image
-            className={`pointer-events-none   relative  mb-2 h-64 ${
+            className={`pointer-events-none object-contain   relative  mb-2 h-64 ${
               backImg && "group-hover:opacity-0 group-hover:hidden"
             }`}
             src={coverImg}
@@ -33,7 +33,7 @@ const BookItem = ({
           />
           {backImg && (
             <Image
-              className=" mb-2 hidden opacity-0 absolute w-full h-full transition group-hover:block group-hover:opacity-100"
+              className=" mb-2 object-contain hidden opacity-0 absolute w-full h-full transition group-hover:block group-hover:opacity-100"
               alt=""
               src={backImg}
             />
