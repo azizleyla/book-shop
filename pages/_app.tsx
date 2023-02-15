@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import "swiper/css";
 import "swiper/css/navigation";
 
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Layout>

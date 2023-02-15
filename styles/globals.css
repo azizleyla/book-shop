@@ -45,3 +45,14 @@ body {
 .swiper {
   position: static !important;
 }
+@media(max-width:778px){
+  .favorites-table{
+   display: block;
+  }
+  .favorites-table tbody{
+    display: block;
+  }
+ .favorites-table thead{
+  display: none;
+ }
+}

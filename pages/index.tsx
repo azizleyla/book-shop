@@ -4,6 +4,7 @@ import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
 import Books from "../components/books";
 
+
 import Banner from "../components/banner";
 
 export default function Home() {

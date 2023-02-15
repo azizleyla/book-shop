@@ -3,6 +3,7 @@ import React from "react";
 import Img from "../../components/Data/Img";
 import { FaTrash } from "react-icons/fa";
 import Link from "next/link";
+import { RiCloseLine } from "react-icons/ri";
 
 const Favorites = () => {
   return (
@@ -18,8 +19,8 @@ const Favorites = () => {
         </div>
       </div>
       <div className="container mx-auto py-10">
-        <table className="border-[1px] border-[#e9e9e9] text-base w-full my-20">
-          <thead>
+        <table className="border-[1px] favorites-table  border-[#e9e9e9] text-base w-full my-20">
+          <thead className="">
             <tr className="bg-[#e9e9e9] border-[1px] border-[#e9e9e9]  uppercase">
               <th className="py-3">Şəkil</th>
               <th>Məhsul</th>
@@ -28,28 +29,9 @@ const Favorites = () => {
               <th></th>
             </tr>
           </thead>
-          <tbody>
-            <tr className="border-b-[1px] border-[#e9e9e9]">
-              <td className="w-48">
-                <Image width={200} height={200} src={Img.book2} alt="" />
-              </td>
-              <td className="text-center text-lg font-semibold">
-                Ayni yildizin altinda
-              </td>
-              <td className="text-center text-2xl">10.99 ₼</td>
-              <td className="text-center">
-                <button className="bg-[#103178] text-white rounded-[50px] py-2 px-5 mr-2">
-                  Məhsulu görüntülə
-                </button>
-              </td>
-              <td>
-                <button className="w-10 h-10 rounded-full flex items-center justify-center bg-red-600 text-white mt-2">
-                  <FaTrash />
-                </button>
-              </td>
-            </tr>
-            <tr className="border-b-[1px] flex flex-col justify-center items-center md:table-row  border-[#e9e9e9]">
-              <td className="w-30">
+          <tbody className="text-center ">
+          <tr className="border-b-[1px] flex flex-col justify-center py-5 md:py-0 items-center md:table-row  border-[#e9e9e9] relative">
+              <td className="w-30 md:w-32">
                 <Image width={200} height={200} src={Img.book5} alt="" />
               </td>
               <td className="text-center text-lg font-semibold">
@@ -62,8 +44,27 @@ const Favorites = () => {
                 </button>
               </td>
               <td>
-                <button className="w-10 h-10 rounded-full flex items-center justify-center bg-red-600 text-white mt-2">
-                  <FaTrash />
+                <button className="w-10 h-10 rounded-full flex items-center justify-center bg-red-600 text-white mt-2 absolute top-7 right-7 md:relative md:top-0 md:right-0">
+                  <RiCloseLine />
+                </button>
+              </td>
+            </tr>
+            <tr className="border-b-[1px] flex flex-col justify-center items-center md:table-row py-5 md:py-0 border-[#e9e9e9] relative">
+              <td className="w-40 md:w-32">
+                <Image className="w-full h-full" height={200} src={Img.book5} alt="" />
+              </td>
+              <td className="text-center text-lg font-semibold">
+                Ayni yildizin altinda
+              </td>
+              <td className="text-center text-2xl">10.99 ₼</td>
+              <td className="text-center">
+                <button className="bg-[#103178] text-white rounded-[50px] py-2 px-5 mr-2">
+                  Məhsulu görüntülə
+                </button>
+              </td>
+              <td>
+              <button className="w-10 h-10 rounded-full flex items-center justify-center bg-red-600 text-white mt-2 absolute top-7 right-7 md:relative md:top-0 md:right-0">
+                  <RiCloseLine />
                 </button>
               </td>
             </tr>
