@@ -65,10 +65,12 @@ const Searhbar = () => {
                 <AiOutlineSearch className="text-2xl md:text-4xl text-[#274585]" />
               </li>
               <li className="hidden lg:block relative">
+                <Link href="/cart">
                 <SlBasket className="" />
                 <span className="w-6 h-6  flex items-center justify-center absolute -top-3 -right-4 bg-[#0F3178] text-white rounded-full text-sm">
                   3
                 </span>
+                </Link>
               </li>
               <li className="hidden lg:block">
                 <Link href="/favorites">

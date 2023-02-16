@@ -54,5 +54,15 @@ body {
   }
  .favorites-table thead{
   display: none;
+ } 
+ .cart-table{
+  display: block;
  }
+ .cart-table tbody{
+  display: block;
+ }
+ .cart-table tbody tr{
+  display: flex;
+ }
+
 }

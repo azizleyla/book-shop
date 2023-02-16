@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { MdRemoveRedEye } from "react-icons/md";
@@ -18,9 +19,20 @@ const BookItem = ({
   setSelectedItem,
   book,
 }: Props) => {
+
+
+
   const { id, title, coverImg, backImg, currentPrice } = book;
+
+  const handleFavorite = (book:IBookItem,e:React.MouseEvent<HTMLElement>) =>{
+    setSelectedItem(book);
+    setIsOpenViewModal(true)
+    e.stopPropagation();
+    e.preventDefault()
+
+  }
   return (
-    <>
+    <Link href={`/kitab/${id}`}>
       <div className=" bg-[#fff] border-[1px] border-[#e1e1e1]  group transition ease-in-out  hover:border-[1px] hover:border-transparent cursor-pointer pt-3 relative">
         <div className="relative h-64 h group-hover:scale-[1.15] custom-transition">
           <Image
@@ -42,9 +54,8 @@ const BookItem = ({
         <div className="absolute top-2 right-0 group-hover:flex flex-col gap-1 border-[1px] border-[#f7f7f7] shadow-sm  bg-white p-2  rounded-[8px] hidden">
           <button
             className=""
-            onClick={() => {
-              setIsOpenViewModal(true);
-              setSelectedItem(book);
+            onClick={(e) => {
+              handleFavorite(book,e)
             }}
           >
             <MdRemoveRedEye className="text-[#777] text-xl hover:text-[#ffac56]" />
@@ -62,12 +73,12 @@ const BookItem = ({
           </button>
           <div className="pl-2 pb-3">
             <span className="text-2xl text-[#1e1e1e] font-bolds">
-              {currentPrice} ₼
+              {currentPrice} 
             </span>
           </div>
         </div>
       </div>
-    </>
+    </Link>
   );
 };
 
