@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { Table } from "react-bootstrap";
 import { FaMinus, FaPlus } from "react-icons/fa";
@@ -30,11 +31,15 @@ const Cart = () => {
               </td>
 
               <td className="w-28">
+                <Link href={`/kitab/${5}`}>
                 <Image width={150} height={200} src={Img.book1} alt="" />
+                </Link>
               </td> 
 
               <td className="">
+                <Link href={`/kitab/5`}>
                 <span className="text-[#0f3178]">Sirr heyatimi deyisdi</span>
+                </Link>
               </td>
               <td className="text-xl text-[#5B6C8F]">
                 <span>10.00$</span>

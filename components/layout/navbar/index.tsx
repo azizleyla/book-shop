@@ -90,7 +90,6 @@ const Navbar = () => {
           </div>
           <div>
             <Link href="/cart">
-              {" "}
               <SlBasket />
             </Link>
           </div>

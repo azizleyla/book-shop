@@ -39,9 +39,9 @@ const Favorites = () => {
               </td>
               <td className="text-center text-2xl">10.99 ₼</td>
               <td className="text-center">
-                <button className="bg-[#103178] text-white rounded-[50px] py-2 px-5 mr-2">
+                <Link href={`/kitab/${5}`} className="bg-[#103178] text-white rounded-[50px] py-2 px-5 mr-2">
                   Məhsulu görüntülə
-                </button>
+                </Link>
               </td>
               <td>
                 <button className="w-10 h-10 rounded-full flex items-center justify-center bg-red-600 text-white mt-2 absolute top-7 right-7 md:relative md:top-0 md:right-0">
