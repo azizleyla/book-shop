@@ -11,7 +11,7 @@ import QuickViewModal from "../modals/QuickViewModal";
 interface Props {
   book: IBookItem;
   setIsOpenViewModal: (value: boolean) => void;
-  setSelectedItem: any;
+  setSelectedItem: (value: IBookItem) => void;
 }
 
 const BookItem = ({
@@ -19,21 +19,22 @@ const BookItem = ({
   setSelectedItem,
   book,
 }: Props) => {
-
-
-
   const { id, title, coverImg, backImg, currentPrice } = book;
 
-  const handleFavorite = (book:IBookItem,e:React.MouseEvent<HTMLElement>) =>{
+  const handleFavorite = (
+    book: IBookItem,
+    e: React.MouseEvent<HTMLElement>,
+  ) => {
     setSelectedItem(book);
-    setIsOpenViewModal(true)
+    setIsOpenViewModal(true);
+    document.body.style.overflow = "hidden";
+    //prevent open modal
     e.stopPropagation();
-    e.preventDefault()
-
-  }
+    e.preventDefault();
+  };
   return (
     <Link href={`/kitab/${id}`}>
-      <div className=" bg-[#fff] border-[1px] border-[#e1e1e1]  group transition ease-in-out  hover:border-[1px] hover:border-transparent cursor-pointer pt-3 relative">
+      <div className=" bg-[#fff] border-[1px] border-[#e1e1e1]  group transition ease-in-out  hover:border-[1px] hover:border-transparent hover:shadow-xl cursor-pointer pt-3 relative">
         <div className="relative h-64 h group-hover:scale-[1.15] custom-transition">
           <Image
             className={`pointer-events-none object-contain   relative  mb-2 h-64 ${
@@ -55,7 +56,7 @@ const BookItem = ({
           <button
             className=""
             onClick={(e) => {
-              handleFavorite(book,e)
+              handleFavorite(book, e);
             }}
           >
             <MdRemoveRedEye className="text-[#777] text-xl hover:text-[#ffac56]" />
@@ -73,7 +74,7 @@ const BookItem = ({
           </button>
           <div className="pl-2 pb-3">
             <span className="text-2xl text-[#1e1e1e] font-bolds">
-              {currentPrice} 
+              {currentPrice}₼
             </span>
           </div>
         </div>

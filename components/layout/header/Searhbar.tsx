@@ -11,7 +11,11 @@ import {
 } from "react-icons/ai";
 import { RiCloseFill } from "react-icons/ri";
 
-const Searhbar = () => {
+interface Props {
+  setActiveMenuItem: (value: string) => void;
+}
+
+const Searhbar = ({ setActiveMenuItem }: Props) => {
   const [isShowSearchModal, setIsShowSearchModal] = useState(false);
 
   const handleResize = () => {
@@ -26,12 +30,19 @@ const Searhbar = () => {
     window.addEventListener("resize", handleResize);
   }, []);
 
+  const resetActiveMenuItem = () => {
+    sessionStorage.setItem("activeItem", "");
+    setActiveMenuItem("");
+  };
   return (
     <div className="border-[1px] py-2 border-[#D9DEE8]">
       <div className="container mx-auto">
         <div className="flex items-center">
           <div className="flex items-center gap-16 ">
-            <div className="w-16 h-16 md:w-20 md:h-20">
+            <div
+              onClick={resetActiveMenuItem}
+              className="w-16 h-16 md:w-20 md:h-20"
+            >
               <Link href="/">
                 <Image
                   src={Img.logo}
@@ -66,10 +77,10 @@ const Searhbar = () => {
               </li>
               <li className="hidden lg:block relative">
                 <Link href="/cart">
-                <SlBasket className="" />
-                <span className="w-6 h-6  flex items-center justify-center absolute -top-3 -right-4 bg-[#0F3178] text-white rounded-full text-sm">
-                  3
-                </span>
+                  <SlBasket className="" />
+                  <span className="w-6 h-6  flex items-center justify-center absolute -top-3 -right-4 bg-[#0F3178] text-white rounded-full text-sm">
+                    3
+                  </span>
                 </Link>
               </li>
               <li className="hidden lg:block">

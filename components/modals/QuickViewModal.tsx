@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { RiCloseLine } from "react-icons/ri";
 import { IBookItem } from "../../types/types";
-import Img from "../Data/Img";
 
 interface Props {
   setIsOpenViewModal: (value: boolean) => void;
@@ -28,24 +27,27 @@ const QuickViewModal = ({ setIsOpenViewModal, selectedItem }: Props) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
   };
+  const handleModalClose = () => {
+    setIsOpenViewModal(false);
+    document.body.style.overflow = "auto";
+  };
 
   return (
-    <div className="fixed top-0 w-full h-full bg-modal-color z-50">
+    <div className="fixed top-0 w-full h-full bg-modal-color z-50 px-2">
       <div
         className="relative max-w-[900px] rounded-md w-full bg-[#fff] py-9 px-4 flex items-center justify-center top-1/2 left-1/2"
         style={{ transform: "translate(-50%,-50%)" }}
       >
         <button
           className="absolute top-2 right-2"
-          onClick={() => setIsOpenViewModal(false)}
+          onClick={handleModalClose}
         >
           <RiCloseLine className="text-[#ccc] text-3xl" />
         </button>
-        <div className="flex">
-          <div>
+        <div className="flex flex-col md:flex-row">
+          <div className="w-[250px] h-[250px] m-auto md:w-[600px] md:h-[500px]">
             <Image
-              width={600}
-              height={700}
+              className="w-full h-full"
               src={selectedItem?.coverImg}
               alt=""
             />
@@ -59,7 +61,7 @@ const QuickViewModal = ({ setIsOpenViewModal, selectedItem }: Props) => {
             >
               {selectedItem?.isStock ? "Anbarda" : "Anbarda yoxdur"}
             </p>
-            <h1 className="text-3xl text-[#0f3178] mb-2">
+            <h1 className="text-xl md:text-3xl text-[#0f3178] mb-2">
               {selectedItem?.title}{" "}
             </h1>
             <h4 className=" text-[#0f3178] my-3">

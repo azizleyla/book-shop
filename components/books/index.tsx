@@ -131,8 +131,8 @@ const books = [
 
 const Books = () => {
   const [booksData, setBoooksData] = useState<IBookItem[]>(books);
-  const [selectedItem, setSelectedItem] = useState();
-  const [isOpenViewModal, setIsOpenViewModal] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<IBookItem>();
+  const [isOpenViewModal, setIsOpenViewModal] = useState<boolean>(false);
 
   return (
     <div className="my-20">
