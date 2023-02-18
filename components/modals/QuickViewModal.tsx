@@ -35,7 +35,7 @@ const QuickViewModal = ({ setIsOpenViewModal, selectedItem }: Props) => {
   return (
     <div className="fixed top-0 w-full h-full bg-modal-color z-50 px-2">
       <div
-        className="relative max-w-[900px] rounded-md w-full bg-[#fff] py-9 px-4 flex items-center justify-center top-1/2 left-1/2"
+        className="relative max-w-[900px] max-h-[600px] rounded-md w-full bg-[#fff] py-9 px-4 flex items-center justify-center top-1/2 left-1/2"
         style={{ transform: "translate(-50%,-50%)" }}
       >
         <button
