@@ -4,6 +4,7 @@ export interface ITitle {
 export interface IBookItem{
     id:number,
     title:string,
+    images:any,
     coverImg: any,
     backImg?:any,
     prevPrice?:number,
@@ -14,7 +15,7 @@ export interface IBookItem{
     isNew:boolean,
     isStock: boolean,
     author?: string,
-    product_no:number
+    productNo:number
 
 }
 export interface IBooks {

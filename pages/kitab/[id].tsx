@@ -12,7 +12,6 @@ const BookDetail = () => {
         className="rounded-md w-full bg-[#fff] py-9 px-4"
       
       >
-    
         <div className="flex flex-col md:flex-row items-center">
           <div>
             <Image
@@ -65,7 +64,6 @@ const BookDetail = () => {
                       Səbətə at
                       <SlBasket className='font-bold' />
                     </button>
-                
                 </div>
               </div>
             </form>

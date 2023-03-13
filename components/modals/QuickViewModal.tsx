@@ -47,8 +47,10 @@ const QuickViewModal = ({ setIsOpenViewModal, selectedItem }: Props) => {
         <div className="flex flex-col md:flex-row">
           <div className="w-[250px] h-[250px] m-auto md:w-[600px] md:h-[500px]">
             <Image
+            width={150}
+            height={150}
               className="w-full h-full"
-              src={selectedItem?.coverImg}
+              src={selectedItem?.images[0]?.coverImage}
               alt=""
             />
           </div>
@@ -103,7 +105,7 @@ const QuickViewModal = ({ setIsOpenViewModal, selectedItem }: Props) => {
                 Məhsulun nömrəsi:
                 <span className="text-[#5B6C8F]">
                   {" "}
-                  {selectedItem?.product_no}
+                  {selectedItem?.productNo}
                 </span>
               </h4>
             </div>

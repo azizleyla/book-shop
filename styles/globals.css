@@ -66,3 +66,14 @@ body {
  }
 
 }
+.new-btn{
+  background-color: green;
+  color: white;
+  font-size: 13px;
+  position: absolute;
+  top:8px;
+  left: 8px;
+  z-index: 99;
+  padding: 2px 15px;
+  border-radius: 20px;
+}
