@@ -15,8 +15,13 @@ export interface IBookItem{
     isNew:boolean,
     isStock: boolean,
     author?: string,
-    productNo:number
+    productNo: number,
+    language:ILang
 
+}
+interface ILang {
+    id: number,
+    lang: "Az | En || Ru || Tr"
 }
 export interface IBooks {
     books:IBookItem[]

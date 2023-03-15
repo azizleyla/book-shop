@@ -17,10 +17,18 @@ interface Props {
   setSelectedItem: (value: IBookItem) => void;
 }
 
-const BookItem = ({ setIsOpenViewModal, setSelectedItem, book }: Props) => {
-  const { id, title, images, currentPrice, isFavorite, isNew,prevPrice } = book;
+const BookItem = ({
+  setIsOpenViewModal,
+  setSelectedItem,
+  book,
+}: Props) => {
+  const { id, title, images, currentPrice, isFavorite, isNew, prevPrice } =
+    book;
 
-  const handleClick = (e: React.MouseEvent<HTMLElement>, book: IBookItem) => {
+  const handleClick = (
+    e: React.MouseEvent<HTMLElement>,
+    book: IBookItem,
+  ) => {
     setSelectedItem(book);
     setIsOpenViewModal(true);
     document.body.style.overflow = "hidden";
@@ -36,7 +44,7 @@ const BookItem = ({ setIsOpenViewModal, setSelectedItem, book }: Props) => {
   });
   const handleFavorite = (
     e: React.MouseEvent<HTMLElement>,
-    book: IBookItem
+    book: IBookItem,
   ) => {
     e.preventDefault();
     e.stopPropagation();
@@ -62,7 +70,7 @@ const BookItem = ({ setIsOpenViewModal, setSelectedItem, book }: Props) => {
             alt=""
             style={{ width: "100%", height: "100%" }}
           />
-          {images[0]?.backImage !== null? (
+          {images[0]?.backImage !== null ? (
             <Image
               width={150}
               height={150}
@@ -89,8 +97,7 @@ const BookItem = ({ setIsOpenViewModal, setSelectedItem, book }: Props) => {
                 isFavorite ? "text-[#ffca56]" : "text-[#777]"
               }`}
             />
-            </button>
-        
+          </button>
         </div>
         <div className=" flex text-center flex-col py-4 px-3 h-28">
           <p className="text-sm">{title}</p>
@@ -107,8 +114,6 @@ const BookItem = ({ setIsOpenViewModal, setSelectedItem, book }: Props) => {
           </div>
         </div>
       </div>
-      
-      
     </Link>
   );
 };

@@ -28,14 +28,13 @@ const Books = () => {
   useEffect(() => {
     setBooks(booksData);
   }, [booksData]);
-   const azBooks =  books.filter(item => item.lang.id===1)
-    const enBooks = books.filter(item => item.id===2)
+  const azBooks = books.filter((item) => item.language.id === 1);
+  const enBooks = books.filter((item) => item.language.id === 2);
   return (
     <div className="my-20">
-      <AzBooks books={azBooks}/>
+      <AzBooks books={azBooks} />
       <TrBooks />
       <EnBooks books={enBooks} />
-
     </div>
   );
 };
