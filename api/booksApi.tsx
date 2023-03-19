@@ -5,8 +5,8 @@ export const BooksApi = {
     const response = await baseApi.get("/book");
     return response.data;
   },
-  async updateFavorite(data: any) {
-    const response = await baseApi.put(`/book/isFavorite`, data);
+  async updateFavorite({ id, data }: any) {
+    const response = await baseApi.put(`/book/${id}/favorite`, data);
     return response.data;
   },
   async getBookById({ bookId }: any) {

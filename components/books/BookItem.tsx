@@ -48,35 +48,34 @@ const BookItem = ({
   ) => {
     e.preventDefault();
     e.stopPropagation();
-    let data = { id: id, isFavorite: !isFavorite };
-    updateFavoriteMutation.mutate(data);
+    let data = { isFavorite: !isFavorite };
+    updateFavoriteMutation.mutate({ id, data });
   };
-
+  const isBackImg = !!images[1]?.imgUrl;
+  console.log(isBackImg);
   return (
     <Link href={`/kitab/${id}`}>
       <div className=" bg-[#fff] border-[1px] border-[#e1e1e1]  group transition ease-in-out  hover:border-[1px] hover:border-transparent hover:shadow-xl cursor-pointer pt-3 relative">
         {isNew && <button className="new-btn">Yeni</button>}
 
-        <div className="relative h-64 h group-hover:scale-[1.15] custom-transition">
+        <div className="relative h-64 group-hover:scale-[1.15] custom-transition">
           <Image
             width={150}
             height={150}
             className={`pointer-events-none object-contain   relative  mb-2 h-64 ${
-              images[0]?.backImage !== null
-                ? "group-hover:opacity-0 group-hover:hidden"
-                : ""
+              isBackImg ? "group-hover:opacity-0 group-hover:hidden" : ""
             }`}
-            src={images[0]?.coverImage}
+            src={images[0]?.imgUrl}
             alt=""
             style={{ width: "100%", height: "100%" }}
           />
-          {images[0]?.backImage !== null ? (
+          {isBackImg ? (
             <Image
               width={150}
               height={150}
               className=" mb-2 object-contain hidden opacity-0 absolute w-full h-full transition group-hover:block group-hover:opacity-100"
               alt=""
-              src={images[0]?.backImage}
+              src={images[1]?.imgUrl}
             />
           ) : (
             ""
@@ -107,7 +106,9 @@ const BookItem = ({
             <SlBasket className=" font-bold text-2xl text-white" />
           </button>
           <div className="pl-2 pb-3 flex flex-col">
-            <span className="line-through text-red-500">{prevPrice}₼</span>
+            <span className="line-through text-red-500 h-10">
+              {prevPrice && prevPrice + "₼"}
+            </span>
             <span className="text-2xl text-[#1e1e1e] font-bolds">
               {currentPrice}₼
             </span>
