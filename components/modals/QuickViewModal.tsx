@@ -45,12 +45,13 @@ const QuickViewModal = ({ setIsOpenViewModal, selectedItem }: Props) => {
           <RiCloseLine className="text-[#ccc] text-3xl" />
         </button>
         <div className="flex flex-col md:flex-row">
-          <div className="w-[250px] h-[250px] m-auto md:w-[600px] md:h-[500px]">
+          <div className="w-[250px] h-[250px] m-auto md:w-[500px] md:h-[400px]">
             <Image
-            width={150}
-            height={150}
+              style={{ objectFit: "contain" }}
+              width={150}
+              height={150}
               className="w-full h-full"
-              src={selectedItem?.images[0]?.coverImage}
+              src={selectedItem?.images[0]?.imgUrl}
               alt=""
             />
           </div>

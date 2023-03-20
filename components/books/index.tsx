@@ -30,10 +30,11 @@ const Books = () => {
   }, [booksData]);
   const azBooks = books.filter((item) => item.language.id === 1);
   const enBooks = books.filter((item) => item.language.id === 2);
+  const trBooks = books.filter((item) => item.language.id === 4);
   return (
     <div className="my-20">
       <AzBooks books={azBooks} />
-      <TrBooks />
+      <TrBooks books={trBooks} />
       <EnBooks books={enBooks} />
     </div>
   );

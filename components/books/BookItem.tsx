@@ -99,7 +99,7 @@ const BookItem = ({
           </button>
         </div>
         <div className=" flex text-center flex-col py-4 px-3 h-28">
-          <p className="text-sm">{title}</p>
+          <p className="text-md">{title}</p>
         </div>
         <div className="flex">
           <button className="absolute bottom-1 right-1  flex items-center flex-row-reverse p-3  bg-[#ffc056] rounded-[5px] justify-center">
