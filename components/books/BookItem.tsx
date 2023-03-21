@@ -98,19 +98,19 @@ const BookItem = ({
             />
           </button>
         </div>
-        <div className=" flex text-center flex-col py-4 px-3 h-28">
-          <p className="text-md">{title}</p>
+        <div className=" flex text-center flex-col py-4 px-3 h-24">
+          <p className="text-lg">{title}</p>
         </div>
         <div className="flex">
           <button className="absolute bottom-1 right-1  flex items-center flex-row-reverse p-3  bg-[#ffc056] rounded-[5px] justify-center">
             <SlBasket className=" font-bold text-2xl text-white" />
           </button>
           <div className="pl-2 pb-3 flex flex-col">
-            <span className="line-through text-red-500 h-10">
-              {prevPrice && prevPrice + "₼"}
+            <span className="line-through text-red-500 h-8">
+              {prevPrice && prevPrice.toFixed(2) + "₼"}
             </span>
             <span className="text-2xl text-[#1e1e1e] font-bolds">
-              {currentPrice}₼
+              {currentPrice.toFixed(2)}₼
             </span>
           </div>
         </div>

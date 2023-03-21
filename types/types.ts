@@ -4,9 +4,7 @@ export interface ITitle {
 export interface IBookItem{
     id:number,
     title:string,
-    images:any,
-    coverImg: any,
-    backImg?:any,
+    images: Image[] ,
     prevPrice?:number,
     currentPrice:number,
     qty:number,
@@ -16,12 +14,17 @@ export interface IBookItem{
     isStock: boolean,
     author?: string,
     productNo: number,
-    language:ILang
+    language:Language
 
 }
-interface ILang {
+interface Language {
     id: number,
-    lang: "Az | En || Ru || Tr"
+    lang: "az" | "en" | "ru" | "tr"
+}
+interface Image{
+    id: number,
+    imgUrl:string,
+    type: "BACK" | 'COVER'
 }
 export interface IBooks {
     books:IBookItem[]
